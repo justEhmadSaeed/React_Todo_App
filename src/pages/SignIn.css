@@ -1,0 +1,44 @@
+#signin-container {
+	height: 100vh;
+	background-image: url(./../images/login-image.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#signin-body {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	background: rgba(0, 0, 0, .6);;
+	justify-content: center;
+	align-items: center;
+}
+#login-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 50%;
+	transition: 0.3s;
+	border-radius: 20px;
+	opacity: 0.9;
+	background-color: #78DDD6;
+	padding: 50px;
+	box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+#login-card:hover {
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.4);
+	opacity: 0.95;
+}
+#login-card .login-label {
+	text-align: center;
+	padding: 30px;
+	color: white;
+	font-size: 40px;
+}
+@media (max-width: 768px) {
+	#login-card {
+		width: 90%;
+	}
+}
