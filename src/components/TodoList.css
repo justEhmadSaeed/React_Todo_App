@@ -1,6 +1,7 @@
 .todo-list {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	padding: 10px 25px;
 	border-radius: 20px;
 	margin: 8px;
@@ -12,21 +13,18 @@
 .todo-list:hover {
 	border: 2px solid #5fc6bb;
 	box-shadow: 2px 2px 3px #5fc6bb;
-
+}
+.todo-list ul{
+	padding-left: 20px;
 }
 .checked-items {
 	font-size: 13px;
 	margin-top: 10px;
 	color: #ccc;
 }
-.todo-footer {
+.todo-footer{
 	align-self: flex-end;
-	margin-top: 10px;
-	color: white;
 }
-.todo-footer span {
-	padding: 0px 5px;
-}
-.todo-footer span:hover {
-	cursor: pointer;
+.todo-footer svg {
+	color: #ccc;
 }

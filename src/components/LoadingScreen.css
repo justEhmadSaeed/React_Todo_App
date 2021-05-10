@@ -1,9 +1,9 @@
 .loading {
-	margin-top: 150px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	height: 100vh;
 }
 .loading > h1 {
 	font-size: 40px;

@@ -29,7 +29,29 @@ const TodoCollection = ({ user }) => {
 		};
 		fetchTodoArray();
 	}, [user.uid]);
-
+	// Delete List Callback
+	const deleteList = async (listId) => {
+		const result = await fetch(
+			'http://localhost:8000/api/list/delete',
+			{
+				method: 'DELETE',
+				body: JSON.stringify({
+					uid: user.uid,
+					listId: listId,
+				}),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		);
+		const data = await result.json();
+		if (!data.error) {
+			const temp = { ...todoListArray };
+			delete temp[listId];
+			console.log(temp);
+			setTodoListArray(temp);
+		}
+	};
 	if (loading) return <LoadingScreen />;
 
 	return (
@@ -39,6 +61,8 @@ const TodoCollection = ({ user }) => {
 					key={key}
 					title={todo.title}
 					todos={todo.todoArray}
+					listId={Object.keys(todoListArray)[key]}
+					deleteList={deleteList}
 				/>
 			))}
 		</div>
