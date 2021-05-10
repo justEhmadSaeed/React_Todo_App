@@ -6,7 +6,7 @@ const LoadingScreen = () => {
 	return (
 		<div className='loading'>
 			<h1>WORK TODOs</h1>
-			<Loader color='teal' width={130} height={130} type='Circles' />
+			<Loader color='#5FC6BB' width={130} height={130} type='Circles' />
 		</div>
 	);
 };

@@ -20,6 +20,10 @@ const TodoCollection = ({ user }) => {
 			<TodoList title='Hello There!' todos={todo} />
 			<TodoList title='Hello There!' todos={todo} />
 			<TodoList title='Hello There!' todos={todo} />
+			<TodoList title='Hello There!' todos={todo} />
+			<TodoList title='Hello There!' todos={todo} />
+			<TodoList title='Hello There!' todos={todo} />
+			<TodoList title='Hello There!' todos={todo} />
 		</div>
 	);
 };

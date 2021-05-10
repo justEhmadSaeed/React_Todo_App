@@ -11,6 +11,10 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
+	box-shadow: 0px 1px 5px black;
+	background-color: #47525d;
+	color: white;
+	margin: 0;
 }
 .title-app-bar p {
 	margin: 0;
@@ -20,6 +24,17 @@
 .title-app-bar a {
 	font-size: 20px;
 	color: white;
+}
+.title-app-bar h1 {
+	margin: 0;
+	text-align: start;
+	font-size: 30px;
+	text-transform: uppercase;
+}
+.title-app-bar > .appbar-buttons {
+	display: flex;
+	justify-content: center;
+	align-self: flex-end;
 }
 .center-align {
 	align-self: center;
@@ -38,11 +53,19 @@
 	padding: 20px;
 	flex-wrap: wrap;
 }
+.button-class{
+	margin: 20px;
+	align-self: center;
+}
 ::-moz-selection {
 	/* Code for Firefox */
 	background: #5fc6bb;
 }
-
 ::selection {
 	background: #5fc6bb;
+}
+@media (max-width: 768px) {
+	.title-app-bar a {
+		display: none;
+	}
 }

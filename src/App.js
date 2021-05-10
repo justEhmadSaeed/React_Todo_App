@@ -6,6 +6,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './App.css';
 import LoadingScreen from './components/LoadingScreen';
 import HomePage from './pages/HomePage';
+import CreateList from './pages/CreateList';
 
 const App = () => {
 	const [user, setUser] = useState({});
@@ -35,6 +36,9 @@ const App = () => {
 		<SignIn />
 	) : (
 		<Switch>
+			<Route path='/create-list'>
+				<CreateList user={user} />
+			</Route>
 			<Route path='/'>
 				<HomePage user={user} />
 			</Route>

@@ -3,7 +3,8 @@
 	flex-direction: column;
 	padding: 5px 15px;
 	border-radius: 20px;
-	margin: 5px;
+	margin: 8px;
+	border: 2px solid #6c6c7f;
 	background-color: #6c6c7f;
 	box-shadow: 2px 3px 4px black;
 	transition: 0.2s ease-in-out;
