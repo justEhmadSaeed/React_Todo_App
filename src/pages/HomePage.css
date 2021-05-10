@@ -1,0 +1,33 @@
+#homepage {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	color: white;
+	height: 100vh;
+	background-color: #47525d;
+}
+#homepage > .title-app-bar {
+	box-shadow: 0px 1px 5px black;
+	background-color: #47525d;
+	color: white;
+	margin: 0;
+}
+#homepage > .title-app-bar h1 {
+	margin: 0;
+	text-align: start;
+	font-size: 30px;
+	text-transform: uppercase;
+}
+#homepage > .title-app-bar > .appbar-buttons {
+	display: flex;
+	justify-content: center;
+	align-self: flex-end;
+}
+#homepage > .center-align > a {
+	text-decoration: none;
+}
+@media (max-width: 768px) {
+	.title-app-bar a {
+		display: none;
+	}
+}

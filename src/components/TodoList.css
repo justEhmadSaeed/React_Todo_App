@@ -1,0 +1,31 @@
+.todo-list {
+	display: flex;
+	flex-direction: column;
+	padding: 5px 15px;
+	border-radius: 20px;
+	margin: 5px;
+	background-color: #6c6c7f;
+	box-shadow: 2px 3px 4px black;
+	transition: 0.2s ease-in-out;
+}
+.todo-list:hover {
+	border: 2px solid #5fc6bb;
+	box-shadow: 2px 2px 3px #5fc6bb;
+
+}
+.checked-items {
+	font-size: 13px;
+	margin-top: 10px;
+	color: #ccc;
+}
+.todo-footer {
+	align-self: flex-end;
+	margin-top: 10px;
+	color: white;
+}
+.todo-footer span {
+	padding: 0px 5px;
+}
+.todo-footer span:hover {
+	cursor: pointer;
+}
