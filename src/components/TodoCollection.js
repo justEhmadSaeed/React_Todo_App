@@ -1,29 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import LoadingScreen from './LoadingScreen';
 import TodoList from './TodoList';
-const todo = [
-	{ text: 'Hello there!', isCompleted: false },
-	{ text: 'Hello there!', isCompleted: true },
-	{ text: 'Hello there!', isCompleted: false },
-	{ text: 'Hello theadawre!', isCompleted: false },
-	{ text: 'Hello there!', isCompleted: true },
-	{ text: 'Hello there!', isCompleted: false },
-	{ text: 'Hello there!', isCompleted: false },
-	{ text: 'Hello thereawdwa!', isCompleted: false },
-	{ text: 'Hello there!', isCompleted: false },
-	{ text: 'Hello there!', isCompleted: true },
-	{ text: 'Hello there!', isCompleted: false },
-	{ text: 'Hello there!', isCompleted: false },
-];
+
 const TodoCollection = ({ user }) => {
+	const [loading, setLoading] = useState(true);
+	const [todoListArray, setTodoListArray] = useState([]);
+
+	useEffect(() => {
+		const fetchTodoArray = async () => {
+			const result = await fetch(
+				'http://localhost:8000/api/list/get',
+				{
+					method: 'POST',
+					body: JSON.stringify({
+						uid: user.uid,
+					}),
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			);
+			const data = await result.json();
+			if (!data.error && data !== null) {
+				setTodoListArray(data);
+			}
+			// Stop Loading after data request is completed
+			setLoading(false);
+		};
+		fetchTodoArray();
+	}, [user.uid]);
+
+	if (loading) return <LoadingScreen />;
+
 	return (
 		<div className='grid'>
-			<TodoList title='Hello There!' todos={todo} />
-			<TodoList title='Hello There!' todos={todo} />
-			<TodoList title='Hello There!' todos={todo} />
-			<TodoList title='Hello There!' todos={todo} />
-			<TodoList title='Hello There!' todos={todo} />
-			<TodoList title='Hello There!' todos={todo} />
-			<TodoList title='Hello There!' todos={todo} />
+			{Object.values(todoListArray).map((todo, key) => (
+				<TodoList
+					key={key}
+					title={todo.title}
+					todos={todo.todoArray}
+				/>
+			))}
 		</div>
 	);
 };
