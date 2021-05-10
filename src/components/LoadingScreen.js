@@ -5,8 +5,8 @@ import './LoadingScreen.css';
 const LoadingScreen = () => {
 	return (
 		<div className='loading'>
-			<h1>RESTAURANT MENU MAKER</h1>
-			<Loader color='teal' width={130} height={130} type='Puff' />
+			<h1>WORK TODOs</h1>
+			<Loader color='teal' width={130} height={130} type='Circles' />
 		</div>
 	);
 };

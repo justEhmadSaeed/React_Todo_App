@@ -9,7 +9,7 @@
 
 .title-app-bar {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	padding: 10px;
 }
 .title-app-bar p {
@@ -20,4 +20,29 @@
 .title-app-bar a {
 	font-size: 20px;
 	color: white;
+}
+.center-align {
+	align-self: center;
+	margin: 10px;
+}
+.text-button {
+	display: flex;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+	color: white;
+}
+.grid {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+	flex-wrap: wrap;
+}
+::-moz-selection {
+	/* Code for Firefox */
+	background: #5fc6bb;
+}
+
+::selection {
+	background: #5fc6bb;
 }

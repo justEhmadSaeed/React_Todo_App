@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyledFirebaseAuth } from 'react-firebaseui';
 import firebase from '../firebase/firebase';
-import './SignIn.css'
+import './SignIn.css';
+import Typical from 'react-typical';
 
 const SignIn = () => {
 	const uiConfig = {
@@ -21,6 +22,11 @@ const SignIn = () => {
 					<label className='login-label'>
 						<b>WORK TODOs</b>
 					</label>
+					<Typical
+						steps={['TODO Lists!', 2000, 'TODO Manager!', 2000]}
+						loop={Infinity}
+						wrapper='h1'
+					/>
 					<StyledFirebaseAuth
 						borderRadius='40px'
 						uiConfig={uiConfig}

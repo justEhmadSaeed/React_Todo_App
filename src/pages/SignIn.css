@@ -23,13 +23,13 @@
 	transition: 0.3s;
 	border-radius: 20px;
 	opacity: 0.9;
-	background-color: #78DDD6;
+	background-color: #5FC6BB;
 	padding: 50px;
 	box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 #login-card:hover {
 	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.4);
-	opacity: 0.95;
+	opacity: 0.98;
 }
 #login-card .login-label {
 	text-align: center;
