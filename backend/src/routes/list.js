@@ -37,6 +37,20 @@ router.post('/get', (req, res) => {
 	} else
 		res.status(400).json({ error: 'Required Fields are missing' });
 });
+// Get a single todo
+router.post('/getOne', (req, res) => {
+	const { uid, listId } = req.body;
+	if (uid && listId) {
+		database
+			.ref(`users/${uid}/TodoLists/${listId}`)
+			.once('value', (snapshot) => {
+				if (snapshot.exists())
+					return res.status(200).json(snapshot.val());
+				else res.status(400).json({ error: 'Data Not Found!' });
+			});
+	} else
+		res.status(400).json({ error: 'Required Fields are missing' });
+});
 // Delete a Todo List
 router.delete('/delete', (req, res) => {
 	const { uid, listId } = req.body;
