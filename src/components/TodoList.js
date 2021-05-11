@@ -1,11 +1,11 @@
-import { Icon, IconButton } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 import { Delete, Edit } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './TodoList.css';
 
 const TodoList = ({ title, todos, listId, deleteList }) => {
-	console.log(listId);
-	const incompleteTodos = todos.filter((item) => !item.isCompleted);
+	const incompleteTodos = todos.filter((item) => !item.isComplete);
 	const completedTodos = todos.length - incompleteTodos.length;
 
 	return (
@@ -36,9 +36,11 @@ const TodoList = ({ title, todos, listId, deleteList }) => {
 				<IconButton onClick={() => deleteList(listId)}>
 					<Delete />
 				</IconButton>
-				<IconButton>
-					<Edit />
-				</IconButton>
+				<Link to={`/edit-list/${listId}`}>
+					<IconButton>
+						<Edit />
+					</IconButton>
+				</Link>
 			</div>
 		</div>
 	);

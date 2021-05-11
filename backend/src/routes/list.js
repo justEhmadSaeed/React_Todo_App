@@ -51,6 +51,23 @@ router.post('/getOne', (req, res) => {
 	} else
 		res.status(400).json({ error: 'Required Fields are missing' });
 });
+// Edit A todo List
+router.post('/edit', (req, res) => {
+	const { uid, title, todoArray, listId } = req.body;
+	if (uid && title && todoArray.length && listId) {
+		database.ref(`users/${uid}/TodoLists/${listId}`).update(
+			{
+				title,
+				todoArray: { ...Object(todoArray) },
+			},
+			(error) => {
+				if (error) return res.status(400).json(error);
+				res.status(200).json({ message: 'Success' });
+			}
+		);
+	} else
+		res.status(400).json({ error: 'Required Fields are missing' });
+});
 // Delete a Todo List
 router.delete('/delete', (req, res) => {
 	const { uid, listId } = req.body;

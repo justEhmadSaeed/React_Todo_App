@@ -7,6 +7,7 @@ import './App.css';
 import LoadingScreen from './components/LoadingScreen';
 import HomePage from './pages/HomePage';
 import CreateList from './pages/CreateList';
+import EditList from './pages/EditList';
 
 const App = () => {
 	const [user, setUser] = useState({});
@@ -36,9 +37,10 @@ const App = () => {
 		<SignIn />
 	) : (
 		<Switch>
-			<Route path='/create-list'>
+			<Route exact path='/create-list'>
 				<CreateList user={user} />
 			</Route>
+			<Route exact path='/edit-list/:listId' component={EditList} />
 			<Route path='/'>
 				<HomePage user={user} />
 			</Route>
