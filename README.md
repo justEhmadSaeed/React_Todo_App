@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 🚀 Configuration Guidlelines
+
+- Create an account on console.firebase.google.com and add your apis keys in the .env file for both backend and frontend.
+- Install npm packages for both frontend and backend by running `npm install` separately in the respective directories.
+- After the successful installation of npm packages, run `npm run start` in the root directory of the project to start both frontend and also a separate command in the backend directory to start the backend.
+
 ## Available Scripts
 
 In the project directory, you can run:
